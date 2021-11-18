@@ -3,8 +3,6 @@ import sys
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     argv = sys.argv[1:]
-    i = 1
-    sum = 0
     operators = ["+", "-", "*", "/"]
     if len(argv) != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
