@@ -7,4 +7,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
         res[i] += tuple_a[i] if len_a > i else 0
         res[i] += tuple_b[i] if len_b > i else 0
     return tuple(res)
-
