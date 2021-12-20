@@ -17,5 +17,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """description of square"""
-        str1 = "[" + str(self.__class__.__name__) + "]" + " " + str(self.__size) + "/" + str(self.__size)
-        return str1
+        s = "[" + str(self.__class__.__name__) + "]" + " " + str(self.__size) + "/" + str(self.__size)
+        return s
