@@ -16,7 +16,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """defines area"""
         return (self.__width * self.__height)
-    
+
     def __str__(self):
         """rectangle description"""
         s1 = "[" + str(self.__class__.__name__) + "]" + " "
