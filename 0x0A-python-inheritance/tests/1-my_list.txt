@@ -1,0 +1,15 @@
+using class ``MyList``
+
+import class ``MyList``
+	>>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+	>>> my_list = MyList()
+	>>> my_list.append(2)
+        >>> my_list.append(4)
+        >>> my_list.append(6)
+        >>> my_list.append(3)
+        >>> my_list.append(1)
+	[2, 4, 6, 3, 1]
+
+
