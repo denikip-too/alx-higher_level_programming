@@ -1,0 +1,37 @@
+The ``Integers addition``
+
+using ``add_integer``
+
+First import ``add_integer``
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+Basic usage:
+	>>> add_integer(3, 4)
+	7
+
+float input:
+	>>> add_integer(4.3, 3)
+	7
+
+String input:
+	>>> add_integer(4, "num")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an interger
+
+string input:
+	>>> add_integer("num", 3)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Negative input:
+	>>> add_integer(100, -2)
+	98
+
+Float input with negative input:
+	>>> add_integer(100.3, -2)
+	98
