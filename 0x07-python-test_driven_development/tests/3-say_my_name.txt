@@ -1,0 +1,25 @@
+usage ``say_my_name``
+
+first import ``say_my_name``
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Basic usage:
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+One input:
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+First Integer input:
+	>>> say_my_name(12, "White")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Second Integer input:
+	>>> say_my_name("White", 12)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
