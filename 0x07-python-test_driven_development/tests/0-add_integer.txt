@@ -20,7 +20,7 @@ String input:
 	>>> add_integer(4, "num")
 	Traceback (most recent call last):
 	...
-	TypeError: b must be an interger
+	TypeError: b must be an integer
 
 string input:
 	>>> add_integer("num", 3)
