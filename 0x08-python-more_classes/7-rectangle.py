@@ -52,10 +52,9 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (strs)
         for i in range(self.__height):
+            strs += (str(self.print_symbol) * self.__width)
             if i != self.__height - 1:
-                print(str(self.print_symbol) * self.__width)
-            else:
-                print((str(self.print_symbol) * self.__width), end="")
+                strs += "\n"
         return strs
 
     def __del__(self):
