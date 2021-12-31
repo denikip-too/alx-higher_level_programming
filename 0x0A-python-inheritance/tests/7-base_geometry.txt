@@ -73,3 +73,10 @@ No input:
 	Traceback (most recent call last):
         ...
         TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Input value True:
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
