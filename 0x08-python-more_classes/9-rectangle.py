@@ -80,4 +80,3 @@ class Rectangle:
         if size < 0:
             raise ValueError("width must be >= 0")
         return (Rectangle(size, size))
-        square.__del__()
