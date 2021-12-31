@@ -5,9 +5,7 @@
 def add_attribute(a_class, name, value):
     """Adds new attribute to an object if it's possible"""
 
-    cannot_add = {int, str, float, list, dict, tuple, frozenset, type, object}
-
-    if type(a_class) in cannot_add:
+    if not hasattr(a_class, "__dict__"):
         raise TypeError("can't add new attribute")
 
     setattr(a_class, name, value)
