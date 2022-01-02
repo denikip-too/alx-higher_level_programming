@@ -11,7 +11,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """class constructor"""
-        super(Square, self).__init__(width = size, height = size, x = x, y = y, id = id)
+        super(Square, self).__init__(width=size, height=size, x=x, y=y, id=id)
         self.size = size
 
     def __str__(self):
