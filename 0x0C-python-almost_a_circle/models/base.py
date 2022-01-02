@@ -9,6 +9,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """class constructor"""
         self.id = id
         if id is not None:
             self.id = id
@@ -17,9 +18,11 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """returns the JSON string representation of list_dictionaries"""
         return json.dumps(list_dictionaries)
 
     def save_to_file(cls, list_objs):
+        """writes JSON string representation of list_objs to a file"""
         filename = cls.__name__ + ".json"
         text = []
         if list_objs is None:
@@ -31,6 +34,7 @@ class Base:
             return f.write(Base.to_json_string(text))
 
     def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
             new = cls(10, 10)
         elif cls.__name__ == "Square":
@@ -39,12 +43,14 @@ class Base:
         return new
 
     def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
         if json_string is None:
             return []
         else:
             return json.loads(json_string)
 
     def load_from_file(cls):
+        """returns a list of instances"""
         filename = cls.__name__ + ".json"
         object_created = []
         with open(filename, 'r') as f:
