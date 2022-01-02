@@ -8,11 +8,14 @@ class Square(Rectangle):
 
     width = 0
     height = 0
+
     def __init__(self, size, x=0, y=0, id=None):
+        """class constructor"""
         super(Square, self).__init__(width = size, height = size, x = x, y = y, id = id)
         self.size = size
 
     def __str__(self):
+        """returns attributes of Square"""
         id = self.id
         w = self.size
         h = self.size
@@ -22,18 +25,22 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """get width and height"""
         return self.width
         return self.height
 
     @size.setter
     def size(self, value):
+        """set width and height"""
         self.width = value
         self.height = value
 
     def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
         return self.__dict__
 
     def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
         if len(args) > 0:
             try:
                 self.id = args[0]
