@@ -55,7 +55,7 @@ class Rectangle(Base):
         if type(value) != int:
             raise TypeError("x must be an integer")
         elif value < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         else:
             self.__x = value
 
@@ -70,7 +70,7 @@ class Rectangle(Base):
         if type(value) != int:
             raise TypeError("y must be an integer")
         elif value < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         else:
             self.__y = value
 
@@ -98,7 +98,7 @@ class Rectangle(Base):
         h = self.__height
         x = self.__x
         y = self.__y
-        return ("[Rectancle] ({}) {}/{} - {}/{}".format(id, x, y, w, h))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, w, h))
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
@@ -117,4 +117,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        return self.__dict__
+        """return self.__dict__"""
+        id = self.id
+        w = self.__width
+        h = self.__height
+        x = self.__x
+        y = self.__y
+        return {'x': x, 'y': y, 'id': id, 'height': h, 'width': w}
