@@ -46,8 +46,7 @@ class Square(Rectangle):
         h = self.size
         x = self.x
         y = self.y
-        return ("'x': {}, 'y': {}, 'id': {}, 'height': {}, 'width': {}"
-                .format(x, y, id, h, w))
+        return {'id': id, 'x': x, 'size': w, 'y': y}
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
