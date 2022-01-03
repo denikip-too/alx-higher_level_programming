@@ -25,13 +25,13 @@ class Base:
         """writes JSON string representation of list_objs to a file"""
         filename = cls.__name__ + ".json"
         text = []
-        if list_objs is None:
-            return []
-        else:
-            for lst in list_objs:
-                text.append(lst.to_dictionary())
         with open(filename, mode="w", encoding="utf-8") as f:
-            return f.write(Base.to_json_string(text))
+            if list_objs is None:
+                f.write("[]")
+            else:
+                for lst in list_objs:
+                    text.append(lst.to_dictionary())
+                f.write(cls.to_json_string(text))
 
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
@@ -39,7 +39,8 @@ class Base:
             new = cls(10, 10)
         elif cls.__name__ == "Square":
             new = cls(10, 10)
-        new.update(**dictionary)
+        else:
+            new.update(**dictionary)
         return new
 
     def from_json_string(json_string):
