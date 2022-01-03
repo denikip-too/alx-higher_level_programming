@@ -39,7 +39,7 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
-            new = cls(10, 10)
+            new = cls(3, 5, 1)
         elif cls.__name__ == "Square":
             new = cls(10, 10)
         else:
