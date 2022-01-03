@@ -38,6 +38,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
+        Base.__nb_objects = 0
         if cls.__name__ == "Rectangle":
             new = cls(3, 5, 1)
         elif cls.__name__ == "Square":
