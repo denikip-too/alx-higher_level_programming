@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Import modules"""
 import json
-import turtle
 
 
 class Base:
@@ -65,9 +64,10 @@ class Base:
         with open(filename, 'r') as f:
             file_string = f.read().replace('\n', '')
             data = cls.from_json_string(file_string)
+            if data is None:
+                f.write("[]")
             for el in data:
                 object_created.append(cls.create(**el))
-
         return object_created
 
     @classmethod
