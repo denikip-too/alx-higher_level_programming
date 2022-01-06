@@ -63,6 +63,8 @@ class Base:
         with open(filename, 'r') as f:
             file_string = f.read().replace('\n', '')
             data = cls.from_json_string(file_string)
+            if data is None:
+                return []
             for el in data:
                 if type(el) == dict:
                     object_created.append(cls.create(**el))
