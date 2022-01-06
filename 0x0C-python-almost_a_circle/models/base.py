@@ -41,11 +41,10 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
-            new = cls(2, 3, 12, 1, 89)
-        elif cls.__name__ == "Square":
-            new = cls(2, 1, 3, 89)
-        else:
-            new.update(**dictionary)
+            new = cls(1, 1)
+        if cls.__name__ == "Square":
+            new = cls(1, 1)
+        new.update(**dictionary)
         return new
 
     @staticmethod
@@ -64,10 +63,11 @@ class Base:
         with open(filename, 'r') as f:
             file_string = f.read().replace('\n', '')
             data = cls.from_json_string(file_string)
-            if data is None:
-                f.write("[]")
             for el in data:
-                object_created.append(cls.create(**el))
+                if type(el) == dict:
+                    object_created.append(cls.create(**el))
+                else:
+                    object_created.append(el)
         return object_created
 
     @classmethod
