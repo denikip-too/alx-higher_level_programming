@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Import modules"""
 import json
+import turtle
 
 
 class Base:
@@ -66,4 +67,28 @@ class Base:
             data = cls.from_json_string(file_string)
             for el in data:
                 object_created.append(cls.create(**el))
+
         return object_created
+
+    @classmethod
+    def draw(cls, list_rectangles, list_squares):
+        """draw the figure
+        """
+        window = turtle.Screen()
+        pen = turtle.Pen()
+        figures = list_rectangles + list_squares
+
+        for fig in figures:
+            pen.up()
+            pen.goto(fig.x, fig.y)
+            pen.down()
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+
+        window.exitonclick()
