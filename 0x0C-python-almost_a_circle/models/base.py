@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Import modules"""
 import json
+import csv
 
 
 class Base:
@@ -71,13 +72,33 @@ class Base:
         return object_created
 
     @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        res = []
+        with open(filename, "w") as f:
+            for items in list_objs:
+                res = items.to_dictionary()
+            writer = csv.DictWriter(f, res[0].keys())
+            writer.writeheader()
+            writer.writerows(res)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        rows = []
+        with open(cls, "r") as f:
+            filename = csv.reader(f)
+            res = next(filename)
+            for row in filename:
+                rows.append(row)
+        return filename
+        return rows
+
+    @classmethod
     def draw(cls, list_rectangles, list_squares):
-        """draw the figure
-        """
+        """draw the figure"""
         window = turtle.Screen()
         pen = turtle.Pen()
         figures = list_rectangles + list_squares
-
         for fig in figures:
             pen.up()
             pen.goto(fig.x, fig.y)
@@ -90,5 +111,4 @@ class Base:
             pen.right(90)
             pen.forward(fig.height)
             pen.right(90)
-
         window.exitonclick()
