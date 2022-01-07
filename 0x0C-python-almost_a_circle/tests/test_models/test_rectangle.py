@@ -38,15 +38,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 20)
         self.assertEqual(r3.area(), 56)
 
-    """def test_str(self):
-        tests for attributes of Rectangle
-        r2 = Rectangle(5, 5, 1, 0, 1)
-        self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/0 - 5/5')"""
-
-    """def test_update(self):
-        test for argument assignment to attributes
-        r2 = Rectangle(89, 2, 3, 4)
-        self.assertEqual(r2.update(), '[Rectangle] (89) 4/10 - 2/3')"""
+    def test_str(self):
+        """tests for attributes of Rectangle"""
+        r1 = Rectangle(5, 5, 1, 0, 1)
+        self.assertEqual(r1.__str__(), '[Rectangle] (1) 1/0 - 5/5')
 
     def test_to_dictionary(self):
         """test dictionary representation of a Rectangle"""
