@@ -2,6 +2,7 @@
 """Import modules"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -73,24 +74,27 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
         filename = cls.__name__ + ".csv"
-        res = []
         with open(filename, "w") as f:
-            for items in list_objs:
-                res = items.to_dictionary()
+            res = []
+            res = [item.to_dictionary() for item in list_objs]
             writer = csv.DictWriter(f, res[0].keys())
             writer.writeheader()
             writer.writerows(res)
 
     @classmethod
     def load_from_file_csv(cls):
-        rows = []
-        with open(cls, "r") as f:
-            filename = csv.reader(f)
-            res = next(filename)
+        """deserializes in CSV"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "r") as f:
+            rows = []
+            dicti = {}
+            filename = csv.DictReader(f)
             for row in filename:
-                rows.append(row)
-        return filename
+                for i, j in dict(row).items():
+                    dicti[i] =int(j)
+                rows.append(cls.create(**dicti))
         return rows
 
     @classmethod
