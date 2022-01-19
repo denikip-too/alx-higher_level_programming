@@ -61,12 +61,15 @@ class Base:
         """returns a list of instances"""
         filename = cls.__name__ + ".json"
         object_created = []
-        with open(filename, 'r') as f:
-            file_string = f.read().replace('\n', '')
-            data = cls.from_json_string(file_string)
-            for el in data:
-                object_created.append(cls.create(**el))
-            return object_created
+        try:
+            with open(filename, 'r') as f:
+                file_string = f.read().replace('\n', '')
+                data = cls.from_json_string(file_string)
+                for el in data:
+                    object_created.append(cls.create(**el))
+                return object_created
+        except IOError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
