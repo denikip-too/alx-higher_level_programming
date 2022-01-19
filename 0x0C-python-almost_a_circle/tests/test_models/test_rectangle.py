@@ -7,20 +7,17 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """tests for class Rectangle"""
 
-    def test_id(self):
-        """test for id attribute"""
+    """def test_id(self):
+        test for id attribute
         r1 = Rectangle(10, 2, 4, 5, 1)
         r2 = Rectangle(2, 10, 5, 7, 2)
         r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 12)
+        self.assertEqual(r1.id, Rectangle._Base__nb_objects)
+        self.assertEqual(r2.id, Rectangle._Base__nb_objects)
+        self.assertEqual(r3.id, Rectangle._Base__nb_objects)"""
 
     def test_attribute_validation(self):
         """attribute validation testing"""
-        r8 = Rectangle(10, 2, 4, 5, 1)
-        r9 = Rectangle(2, 10, 5, 7, 2)
-
         with self.assertRaises(TypeError):
             r1 = Rectangle(10, "2")
             r2 = Rectangle(10, 2, {}, 3)
