@@ -92,6 +92,6 @@ class Base:
             filename = csv.DictReader(f)
             for row in filename:
                 for i, j in dict(row).items():
-                    dicti[i] =int(j)
+                    dicti[i] = int(j)
                 rows.append(cls.create(**dicti))
         return rows
