@@ -39,8 +39,8 @@ Zero input:
 	TypeError: a must be an integer
 
 float overflow:
-	>>> add_integer(5.78888888, 7)
-	12
+	>>> add_integer(5788888.88)
+	5788986
 
 string input:
 	>>> add_integer("num", 3)
