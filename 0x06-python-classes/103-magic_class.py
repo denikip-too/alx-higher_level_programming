@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""import module"""
 import math
 
 
 class MagicClass:
+    """class Square that defines a square"""
+
     def __init__(self, radius):
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
