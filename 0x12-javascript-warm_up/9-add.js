@@ -1,13 +1,14 @@
 #!/usr/bin/node
-//prints the addition of 2 integers
+// prints the addition of 2 integers
 
 function add(a, b) {
-	let c = a + b;
-	return (c);
+  return (a + b);
 }
-let x = parseInt(process.argv[2]);
-let y = parseInt(process.argv[3]);
+const x = parseInt(process.argv[2]);
+const y = parseInt(process.argv[3]);
 if (x && y) {
-	let result = add(x, y);
-	console.log(result);
+  const result = add(x, y);
+  console.log(result);
+} else {
+  console.log('NaN');
 }
