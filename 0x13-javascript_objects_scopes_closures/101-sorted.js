@@ -7,7 +7,7 @@ ids by occurrence
 const dct = require('./101-data.js').dict;
 const newDict = {};
 for (const key in dct) {
-  if (newDict[dct[key]] === 'undefined') {
+  if (newDict[dct[key]] === undefined) {
     newDict[dct[key]] = [];
   }
   newDict[dct[key]].push(key);
