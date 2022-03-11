@@ -7,6 +7,7 @@ from model_state import Base, State
 
 
 def update_to_state_obj():
+    """changes the name of a State object from the database hbtn_0e_6_usa"""
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -20,6 +21,7 @@ def update_to_state_obj():
     session.commit()
 
     session.close()
+
 
 if __name__ == "__main__":
     update_to_state_obj()
