@@ -25,5 +25,6 @@ def list_city_obj():
 
     session.close()
 
+
 if __name__ == "__main__":
     list_city_obj()
