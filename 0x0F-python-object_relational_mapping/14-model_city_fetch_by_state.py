@@ -8,6 +8,7 @@ from model_city import City
 
 
 def list_city_obj():
+    """prints all City objects from the database hbtn_0e_14_usa"""
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
