@@ -7,6 +7,7 @@ from model_state import Base, State
 
 
 def list_arg_state_obj():
+    """prints the State object with the name passed as argument"""
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -28,6 +29,7 @@ def list_arg_state_obj():
         print("Not Found")
 
     session.close()
+
 
 if __name__ == "__main__":
     list_arg_state_obj()
