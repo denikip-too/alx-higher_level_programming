@@ -2,6 +2,7 @@
 """display my status"""
 import urllib.request
 
+
 def status():
     """display my status"""
     with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as resp:
