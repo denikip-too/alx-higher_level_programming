@@ -7,4 +7,5 @@ if __name__ == "__main__":
         f = resp.read()
         print("Body response:")
         print("\t- type: {}".format(type(r.text)))
-        print("\t-content: {}".format(f.text))
+        print("\t- content: {}".format(f.text))
+        print("\t- utf8 content: {}".format(f.decode("utf8")))
