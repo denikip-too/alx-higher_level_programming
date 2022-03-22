@@ -2,10 +2,15 @@
 """display my status"""
 import urllib.request
 
-if __name__ == "__main__":
+def status():
+    """display my status"""
     with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as resp:
         f = resp.read()
         print("Body response:")
-        print("\t- type: {}".format(type(r.text)))
-        print("\t- content: {}".format(f.text))
+        print("\t- type: {}".format(type(f)))
+        print("\t- content: {}".format(f))
         print("\t- utf8 content: {}".format(f.decode("utf8")))
+
+
+if __name__ == "__main__":
+    status()
