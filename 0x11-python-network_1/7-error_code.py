@@ -11,7 +11,7 @@ def error_code():
         if r.status_code >= 400:
             print("Error code: {}".format(r.status_code))
         else:
-            print(r.content)
+            print(r.content.decode("utf-8"))
     except:
         pass
 
