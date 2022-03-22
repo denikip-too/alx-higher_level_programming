@@ -5,8 +5,8 @@ import urllib.request
 
 def status():
     """display my status"""
-    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as resp:
-        f = resp.read()
+    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as res:
+        f = res.read()
         print("Body response:")
         print("\t- type: {}".format(type(f)))
         print("\t- content: {}".format(f))
