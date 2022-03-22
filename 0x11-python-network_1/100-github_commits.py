@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """list 10 commits (from the most recent to oldest) of the repository
-    and by the user"""
+    by the user"""
 import requests
 import sys
 
