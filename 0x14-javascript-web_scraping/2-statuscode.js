@@ -1,8 +1,8 @@
 #!/usr/bin/node
 // JS script that display the status code of a GET request
 
-let request = require('request');
-let url = process.argv[2];
+const request = require('request');
+const url = process.argv[2];
 request(url, (error, statuscode) => {
   if (error) {
     console.log(error);
