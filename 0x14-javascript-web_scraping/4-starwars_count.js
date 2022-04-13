@@ -7,7 +7,7 @@ request.get(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    const temp = JSON.parse(body);
+    const temp = JSON.parse(body).results;
     console.log(temp.reduce((j, movie) => {
       return movie.characters.find((character) => character.endsWith('/18/'))
         ? j + 1
